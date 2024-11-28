@@ -1,0 +1,15 @@
+
+simple_graph = nx.Graph(graph)
+
+degree_centrality = nx.degree_centrality(simple_graph)
+closeness_centrality = nx.closeness_centrality(simple_graph)
+betweenness_centrality = nx.betweenness_centrality(simple_graph)
+eigenvector_centrality = nx.eigenvector_centrality(simple_graph)
+
+centralities = {
+    "degree_centrality": degree_centrality,
+    "closeness_centrality": closeness_centrality,
+    "betweenness_centrality": betweenness_centrality,
+    "eigenvector_centrality": eigenvector_centrality
+}
+centralities

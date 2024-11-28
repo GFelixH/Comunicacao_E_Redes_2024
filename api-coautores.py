@@ -4,7 +4,22 @@ from time import sleep
 
 # Carregar o CSV
 pesquisadores_df = pd.read_csv('autores_com_id2.csv')
+# Coeficiente local de clusterização
+local_clustering = nx.clustering(G)
+print("Coeficientes locais de clusterização:", local_clustering)
 
+# Coeficiente médio de clusterização
+average_clustering = nx.average_clustering(G)
+print("Coeficiente médio de clusterização:", average_clustering)
+
+# Desenhando o grafo
+pos = nx.spring_layout(G)  # posições para todos os nós
+nx.draw_networkx_nodes(G, pos)
+nx.draw_networkx_edges(G, pos)
+nx.draw_networkx_labels(G, pos)
+
+plt.title("Grafo")
+plt.show()
 # Criar uma lista para armazenar resultados
 resultados_coautoria = []
 

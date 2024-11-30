@@ -2,8 +2,9 @@ import requests
 import pandas as pd
 from time import sleep
 
+
 # Carregar o CSV com nomes de pesquisadores
-pesquisadores_df = pd.read_csv('autores_com_artigos.csv')
+pesquisadores_df = pd.read_csv("data\\raw\\autores_com_artigos.csv")
 
 # Lista para armazenar os resultados
 ids_pesquisadores = []
@@ -49,6 +50,6 @@ for _, row in pesquisadores_df.iterrows():
 
 # Salvar os resultados em um novo CSV
 ids_df = pd.DataFrame(ids_pesquisadores)
-ids_df.to_csv('autores_com_id2.csv', index=False)
+ids_df.to_csv('data/processed/autores_com_id2.csv', index=False)
 
 print("Arquivo 'autores_com_id2.csv' gerado com sucesso.")

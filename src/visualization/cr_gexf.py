@@ -1,7 +1,6 @@
 import pandas as pd
 import networkx as nx
 
-# Especifique o caminho do arquivo CSV manualmente
 expanded_df = pd.read_csv(r"C:\Users\teixe\Downloads\resultado_expandido_limpo.csv")
 
 # Criar o MultiGraph

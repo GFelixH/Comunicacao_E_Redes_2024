@@ -32,3 +32,23 @@ print("Top 5 by Closeness Centrality:", top_closeness)
 print("Top 5 by Betweenness Centrality:", top_betweenness)
 print("Top 5 by Clustering Coefficient:", top_clustering)
 print("Assortativity Coefficient (Degree Assortativity):", assortativity_coefficient)
+
+
+# Coeficiente local de clusterização
+local_clustering = nx.clustering(G)
+print("Coeficientes locais de clusterização:", local_clustering)
+
+# Coeficiente médio de clusterização
+average_clustering = nx.average_clustering(G)
+print("Coeficiente médio de clusterização:", average_clustering)
+
+# Desenhando o grafo
+pos = nx.spring_layout(G)  # posições para todos os nós
+nx.draw_networkx_nodes(G, pos)
+nx.draw_networkx_edges(G, pos)
+nx.draw_networkx_labels(G, pos)
+
+plt.title("Grafo")
+plt.show()
+# Criar uma lista para armazenar resultados
+resultados_coautoria = []

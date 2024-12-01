@@ -1,8 +1,9 @@
 import pandas as pd
 import networkx as nx
+import matplotlib.pyplot as plt
 
 # Load data
-data = pd.read_csv('1resultado_expandido_limpo.csv')
+data = pd.read_csv('data\\processed\\resultado_expandido_limpo.csv')
 G = nx.Graph()
 
 # Add edges to graph from data
@@ -33,7 +34,6 @@ print("Top 5 by Betweenness Centrality:", top_betweenness)
 print("Top 5 by Clustering Coefficient:", top_clustering)
 print("Assortativity Coefficient (Degree Assortativity):", assortativity_coefficient)
 
-
 # Coeficiente local de clusterização
 local_clustering = nx.clustering(G)
 print("Coeficientes locais de clusterização:", local_clustering)
@@ -42,13 +42,15 @@ print("Coeficientes locais de clusterização:", local_clustering)
 average_clustering = nx.average_clustering(G)
 print("Coeficiente médio de clusterização:", average_clustering)
 
-# Desenhando o grafo
-pos = nx.spring_layout(G)  # posições para todos os nós
-nx.draw_networkx_nodes(G, pos)
-nx.draw_networkx_edges(G, pos)
-nx.draw_networkx_labels(G, pos)
+# Gerando posições para os nós com spring_layout
+pos = nx.spring_layout(G)  # Posições para todos os nós, calculadas automaticamente
 
-plt.title("Grafo")
+# Desenhando o grafo
+plt.figure(figsize=(10, 8))  # Opcional: Tamanho da figura
+nx.draw_networkx_nodes(G, pos, node_size=500, node_color='skyblue')  # Cor e tamanho dos nós
+nx.draw_networkx_edges(G, pos, width=1.0, alpha=0.5, edge_color='gray')  # Cor e transparência das arestas
+nx.draw_networkx_labels(G, pos, font_size=10, font_family="sans-serif")  # Tamanho da fonte das labels
+
+plt.title("Network Graph")
+plt.axis('off')  # Desligando o eixo
 plt.show()
-# Criar uma lista para armazenar resultados
-resultados_coautoria = []

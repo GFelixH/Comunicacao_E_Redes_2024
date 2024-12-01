@@ -4,7 +4,7 @@ import community as community_louvain
 import matplotlib.pyplot as plt
 
 # Load data
-data = pd.read_csv('1resultado_expandido_limpo.csv')
+data = pd.read_csv('data\\processed\\resultado_expandido_limpo.csv')
 G = nx.Graph()
 
 # Add edges to graph from data

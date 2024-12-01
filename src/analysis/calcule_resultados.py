@@ -2,7 +2,7 @@ import pandas as pd
 import networkx as nx
 
 # Load data
-data = pd.read_csv('resultado_expandido_limpo.csv')
+data = pd.read_csv('data\\processed\\resultado_expandido_limpo.csv')
 G = nx.Graph()
 
 # Add edges to graph from data

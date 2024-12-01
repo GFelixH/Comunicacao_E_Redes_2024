@@ -1,7 +1,7 @@
 import pandas as pd
 import networkx as nx
 
-expanded_df = pd.read_csv(r"C:\Users\teixe\Downloads\resultado_expandido_limpo.csv")
+expanded_df = pd.read_csv('data\\processed\\resultado_expandido_limpo.csv')
 
 # Criar o MultiGraph
 G = nx.MultiGraph()
@@ -14,4 +14,4 @@ for _, row in expanded_df.iterrows():
 
 # Exibir informações sobre o grafo criado
 
-nx.write_gexf(G, "C:/Users/teixe/Downloads/multigrafo_nomes.gexf")
+nx.write_gexf(G, "src\\visualization\\multigrafo_nomes(2).gexfil")

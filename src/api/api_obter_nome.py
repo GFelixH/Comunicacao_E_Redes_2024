@@ -20,10 +20,12 @@ df = pd.read_csv(input_csv)
 # Lista para armazenar os resultados (pesquisador_id, coautores)
 resultados = []
 
+# Contador para feedback de progresso
+total_linhas = len(df)
+print(f"Processando {total_linhas} registros...")
+
 # Loop para processar cada linha do CSV
-a=0
-for _, row in df.iterrows():
-    a = a + 1
+for i, row in df.iterrows():
     pesquisador_id = row['pesquisador_id']  # ID do pesquisador
     artigo_id = row['artigo_id']  # ID do artigo
     coautores = row['coautores']  # Lista de coautores (provavelmente uma string)
@@ -40,8 +42,13 @@ for _, row in df.iterrows():
                 'pesquisador_id': obter_nome_autor(pesquisador_id),  # Nome do pesquisador
                 'coautores': nome_coautor  # Nome do coautor
             })
-    if a > 5:
-        break
+    
+    # Exibir o progresso a cada 100 iterações
+    if (i + 1) % 100 == 0:
+        print(f"Processado {i + 1}/{total_linhas} registros.")
+
+# Verifique se a lista de resultados tem dados
+print(f"Total de registros processados: {len(resultados)}")
 
 # Criar um DataFrame com os resultados
 df_resultado = pd.DataFrame(resultados)

@@ -21,6 +21,6 @@ O código calcula várias métricas de rede, como:
 4. Coeficiente de Clusterização: Indica a tendência de um nó formar clusters com seus vizinhos.
 5. Assortatividade de Grau: Mede a tendência de nós com graus semelhantes se conectarem entre si.
 
-##Licença
+## Licença
 
 Este projeto está licenciado sob a Licença MIT.
